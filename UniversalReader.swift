@@ -1,3 +1,4 @@
+```swift
 import SwiftUI
 import CoreNFC
 
@@ -10,11 +11,13 @@ final class NFCReader: NSObject, NFCTagReaderSessionDelegate {
             return
         }
 
-        let newSession = NFCTagReaderSession(
+        guard let newSession = NFCTagReaderSession(
             pollingOption: [.iso14443, .iso15693, .iso18092],
             delegate: self,
             queue: nil
-        )
+        ) else {
+            return
+        }
 
         newSession.alertMessage = "Przyłóż urządzenie NFC"
         session = newSession
@@ -61,9 +64,11 @@ struct ContentView: View {
 
 @main
 struct UniversalReaderApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
 }
+```
