@@ -1,0 +1,32 @@
+name: UniversalReader
+
+options:
+  bundleIdPrefix: com.jurmr
+  deploymentTarget:
+    iOS: "16.5"
+
+targets:
+  UniversalReader:
+    type: application
+    platform: iOS
+    sources:
+      - UniversalReader.swift
+
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.jurmr.universalreader
+      PRODUCT_NAME: UniversalReader
+      INFOPLIST_KEY_CFBundleDisplayName: Universal Reader
+      INFOPLIST_KEY_NSCameraUsageDescription: ""
+      SWIFT_VERSION: "5.0"
+
+    info:
+      path: UniversalReader-Info.plist
+      properties:
+        CFBundleDisplayName: Universal Reader
+        NFCReaderUsageDescription: "Ta aplikacja używa NFC do odczytywania urządzeń NFC."
+
+    entitlements:
+      path: UniversalReader.entitlements
+      properties:
+        com.apple.developer.nfc.readersession.formats:
+          - TAG
