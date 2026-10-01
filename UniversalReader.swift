@@ -66,7 +66,6 @@ var body: some View {
 @main
 struct UniversalReaderApp: App {
 
-```
 var body: some Scene {
     WindowGroup {
         ContentView()
