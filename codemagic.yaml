@@ -23,7 +23,7 @@ workflows:
             -scheme "UniversalReader" \
             -configuration Debug \
             -destination 'generic/platform=iOS' \
-            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_ALLOWED=YES \
             build
 
     artifacts:
